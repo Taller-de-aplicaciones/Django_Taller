@@ -1,0 +1,61 @@
+{% extends "appWebTemplates/baseMantenedores.html" %}
+
+{% block contenido %}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col">
+            <h2>Mantenedor Entrevistador</h2>
+            <form method="post">
+                {% csrf_token %}
+                <div class="row">
+                    {{ form.non_field_errors }}
+                    <div class="col-3 mb-3">
+                        {{ form.usuario.label_tag }}
+                        {{ form.usuario }}
+                        {{ form.usuario.errors }}
+                    </div>
+                    <div class="col-3 mb-3">
+                        {{ form.rut.label_tag }}
+                        {{ form.rut }}
+                        {{ form.rut.errors }}
+                    </div>
+                    <div class="col-3 mb-3">
+                        {{ form.nombre.label_tag }}
+                        {{ form.nombre }}
+                        {{ form.nombre.errors }}
+                    </div>
+                    <div class="col-3 mb-3">
+                        {{ form.paterno.label_tag }}
+                        {{ form.paterno }}
+                        {{ form.paterno.errors }}
+                    </div>
+                    <div class="col-3 mb-3">
+                        {{ form.materno.label_tag }}
+                        {{ form.materno }}
+                        {{ form.materno.errors }}
+                    </div>
+                    <div class="col-3 mb-3">
+                        {{ form.fechaNac.label_tag }}
+                        {{ form.fechaNac }}
+                        {{ form.fechaNac.errors }}
+                    </div>
+                    <div class="col-3 mb-3">
+                        {{ form.sexo.label_tag }}
+                        {{ form.sexo }}
+                        {{ form.sexo.errors }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a class="btn btn-dark" href="{% url 'menu' %}">Ir al inicio</a>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

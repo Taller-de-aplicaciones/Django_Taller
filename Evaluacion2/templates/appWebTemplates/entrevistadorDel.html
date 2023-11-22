@@ -1,0 +1,24 @@
+{% extends "appWebTemplates/baseMantenedores.html" %}
+
+{% block contenido %}
+<div class="row">
+    <div class="mt-5 col-10 offset-1 text-center">
+        <h3>Confirmar eliminacion de usuario</h3>
+        <div class="alert alert-danger h5 mb-3">
+            Seguro que deseas eliminar al entrevistador {{ entrevistador.usuario }}, Nombre completo: 
+                {{ analista.nombre }} {{ analista.paterno }} {{ analista.materno }} ?
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col mt-2">
+                    <a href="{% url 'listaEntrevistadores' %}" class="btn btn-dark">Cancelar</a>
+                </div>
+                <div class="col mt-2">
+                    <button class="btn btn-danger" type="submit">Confirmar eliminacion</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock contenido %}
